@@ -9,12 +9,13 @@
     "steps": [
         {
             "title": "Install werf",
-            "text": "step1/text.md",
-            "verify": "step1/verify.sh"
+            "text": "install/text.md",
+            "verify": "install/verify.sh"
         },
         {
             "title": "Initiate a git repository",
-            "text": "step2/text.md"
+            "text": "repo/text.md",
+            "verify": "repo/verify.md"
         }
     ],
     "assets": {
