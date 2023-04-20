@@ -3,8 +3,8 @@
   "description": "Test werf",
   "details": {
     "intro": {
-      "text": "intro.md",
-      "background": "./background.sh"
+      "text": "intro/intro.md",
+      "background": "intro/background.sh"
     },
     "steps": [
         {
