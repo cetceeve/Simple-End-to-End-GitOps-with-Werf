@@ -1,2 +1,2 @@
-# Simple-End-to-End-GitOps-with-Werf
-Killercoda tutorial for were
+# Simple End to End GitOps with Werf
+Killercoda tutorial for Werf
