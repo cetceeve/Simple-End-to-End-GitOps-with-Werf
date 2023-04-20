@@ -25,6 +25,7 @@ kind: Service
 metadata:
   name: demo-app
 spec:
+  type: NodePort
   selector:
     app: demo-app
   ports:
@@ -32,4 +33,3 @@ spec:
       port: 3000
       targetPort: 3000
       nodePort: 30081   
-  type: NodePort
