@@ -1,0 +1,22 @@
+{
+  "title": "Simple End to End GitOps with Werf",
+  "description": "Test werf",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+        {
+            "title": "Create a pod",
+            "text": "step1/text.md",
+            "verify": "step1/verify.sh"
+        }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
