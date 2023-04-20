@@ -16,7 +16,11 @@
             "title": "Initiate a git repository",
             "text": "gitinit/text.md",
             "verify": "gitinit/verify.sh"
-        }
+        },
+        {
+          "title": "Run werf",
+          "text": "run/text.md"
+      }
     ],
     "assets": {
         "host01": [
