@@ -1,6 +1,6 @@
 {
   "title": "Simple End to End GitOps with Werf",
-  "description": "Test werf",
+  "description": "Learn about GitOps principles and the tool werf.",
   "details": {
     "intro": {
       "text": "intro/intro.md",
@@ -8,12 +8,12 @@
     },
     "steps": [
         {
-            "title": "Create a pod",
+            "title": "Install werf",
             "text": "step1/text.md",
             "verify": "step1/verify.sh"
         },
         {
-            "title": "Assets",
+            "title": "Initiate a git repository",
             "text": "step2/text.md"
         }
     ],
