@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: {{ .Values.werf.image.demo-app }}
+        image: {{ .Values.werf.image.demoapp }}
         ports:
         - containerPort: 3000
