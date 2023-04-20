@@ -14,8 +14,8 @@
         },
         {
             "title": "Initiate a git repository",
-            "text": "repo/text.md",
-            "verify": "repo/verify.md"
+            "text": "gitinit/text.md",
+            "verify": "gitinit/verify.sh"
         }
     ],
     "assets": {
