@@ -1,0 +1,1 @@
+Test if assets were loaded

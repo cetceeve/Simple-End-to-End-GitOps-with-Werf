@@ -10,15 +10,19 @@
             "title": "Create a pod",
             "text": "step1/text.md",
             "verify": "step1/verify.sh"
+        },
+        {
+            "title": "Assets",
+            "text": "step2/text.md"
         }
     ],
-    "finish": {
-      "text": "finish.md"
-    },
     "assets": {
         "host01": [
             {"file": "**", "target": "/root"}
         ]
+    },
+    "finish": {
+        "text": "finish.md"
     }
   },
   "backend": {
