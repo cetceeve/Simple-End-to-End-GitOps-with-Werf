@@ -1,5 +1,5 @@
-To perform actual _Git_Ops we need to initialize a git repository for out demo project.
-Our demo project is called *demo-app* and resides in the folder `demo-app`.
+To perform actual *Git*Ops we need to initialize a git repository for out demo project.
+Our demo project is called **demo-app** and resides in the folder `demo-app`.
 
 ```
 cd demo-app/
