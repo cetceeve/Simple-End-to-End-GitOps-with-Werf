@@ -1,4 +1,4 @@
-ARG my_appname=sssbnotifymeserver
+ARG my_appname=demoapp
 
 FROM rust:slim-bullseye as build
 ARG my_appname
