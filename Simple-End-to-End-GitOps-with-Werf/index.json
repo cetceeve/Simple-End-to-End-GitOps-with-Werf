@@ -19,7 +19,12 @@
         {
           "title": "Run werf",
           "text": "run/text.md"
-      }
+        },
+        {
+          "title": "Remove deployment",
+          "text": "dismiss/text.md",
+          "verify": "dismiss/verify.sh"
+        }
     ],
     "assets": {
         "host01": [
