@@ -8,8 +8,17 @@ Now werf is building our application, deploying it to the registry, updating the
 
 TODO: add flowchart here
 
-Werf pushes every build that it has created to the same image in the registry, differentiating them by tags.
+# Explore
 
+Takesome some time to explore what was actually deployed:
+
+`k --namespace demo-app get deployments`{{exec}}
+
+You can see that our service is listening to external requests on port `30081`:
+
+`k --namespace demo-app get services`{{exec}}
+
+Werf pushes every build that it has created to the same image in the registry, differentiating them by tags.
 Check out the images in the local registry by running:
 
 `curl -X GET http://localhost:5000/v2/_catalog`{{exec}}
@@ -17,6 +26,8 @@ Check out the images in the local registry by running:
 Check out the tags for this image by running:
 
 `curl -X GET http://localhost:5000/v2/demo-app/tags/list`{{exec}}
+
+# Check out the application
 
 Now access our demo app via:
 
