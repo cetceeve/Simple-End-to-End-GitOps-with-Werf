@@ -4,17 +4,18 @@
   "details": {
     "intro": {
       "text": "intro/intro.md",
-      "foreground": "intro/foreground.sh"
+      "foreground": "intro/foreground.sh",
+      "verify": "intro/verify.sh"
     },
     "steps": [
         {
-            "title": "Install werf",
-            "text": "install/text.md",
-            "verify": "install/verify.sh"
+            "title": "Initiate git",
+            "text": "gitinit/text.md"
         },
         {
-            "title": "Initiate a git repository",
-            "text": "gitinit/text.md"
+          "title": "Install werf",
+          "text": "install/text.md",
+          "verify": "install/verify.sh"
         },
         {
           "title": "Run werf",
