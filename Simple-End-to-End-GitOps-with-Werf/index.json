@@ -21,9 +21,12 @@
           "text": "run/text.md"
         },
         {
+          "title": "Making some changes",
+          "text": "changes/text.md"
+        },
+        {
           "title": "Remove deployment",
-          "text": "dismiss/text.md",
-          "verify": "dismiss/verify.sh"
+          "text": "dismiss/text.md"
         }
     ],
     "assets": {
