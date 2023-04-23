@@ -27,6 +27,10 @@
         {
           "title": "Remove deployment",
           "text": "dismiss/text.md"
+        },
+        {
+          "title": "Automation",
+          "text": "automation/text.md"
         }
     ],
     "assets": {
