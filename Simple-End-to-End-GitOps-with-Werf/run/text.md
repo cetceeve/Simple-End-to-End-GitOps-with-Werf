@@ -3,16 +3,19 @@ Start the command now, it will take some time:
 
 `werf converge --repo localhost:5000/demo-app`{{exec}}
 
+The `--repo` option specifies the registry and the image we use for our deployment.
+
 `werf converge --repo <registry>/<image>` 
 
-The `--repo` command is actually about specifing the registry and the image we use for our deployment.
+![Flowchart](./flowchart.jpg)
 
 Now werf starts by building our application from the Dockerfile(s) that we specified in `werf.yml`.
-Next it will upload the images into the registry as specified in the `--repo` option.
-Now that we have fresh images to deploy werf will update the manifest files to use the newest images.
-In this stage this variable - `image: {{ .Values.werf.image.demoapp }}` - from the `deployment.yml` is resolved.
-Now that the configuration files are ready werf will apply them to the local Kuberentes cluster.
-![Flowchart](./flowchart.jpg)
+It will upload the images into the registry as specified by the `--repo` option.
+Now that we have fresh images to deploy, werf will update the manifest files to use the newest images.
+In this stage this variable - `image: {{ .Values.werf.image.demoapp }}` - from the *deployment.yml* file is resolved.
+Now that the configuration files are ready, werf will apply them to the local Kuberentes cluster.
+
+> [NOTE](https://werf.io/documentation/v1.2/index.html#deploy-an-example-application): werf uses the same settings to connect to the Kubernetes cluster as the `kubectl` tool does: the `~/.kube/config` file and the `KUBECONFIG` environment variable. werf also supports `--kube-config` and `--kube-config-base64` parameters for specifying custom kubeconfig files.
 
 > *Notes on the image registry*: In order to avoid a login to dockerhub or any other cloud registry we are running a local image registry here in our instance at `localhost:5000`. This registry is accessed via http instead of https, this is why we have specified in the previous step that werf is allowed to use an insecure registry.
 

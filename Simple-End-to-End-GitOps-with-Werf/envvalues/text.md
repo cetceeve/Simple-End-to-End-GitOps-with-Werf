@@ -34,9 +34,9 @@ to
 # Multiple branches
 
 This feature is especially useful in combination with multiple branches.
-You could have one production deployment running reflecting the `master` branch and one deployment running reflecting a `dev` branch.
+You could have one production deployment reflecting the `master` branch and one deployment reflecting a `dev` branch.
 
-Start by deploying your current application state to the production environment.
+Let's start by deploying your current application state to the production environment.
 
 `werf converge --repo localhost:5000/demo-app --env production`{{exec}}
 
@@ -48,15 +48,13 @@ git checkout development
 ```{{exec}}
 
 Make some changes in this new branch and commit them.
-Deploy the state of this branch into the depoyment environment `development`.
+You can now deploy the state of this branch into the environment `development`.
 
 `werf converge --repo localhost:5000/demo-app --env development`{{exec}}
 
-Both deployments are now running in parallel in their respective namespaces.
+Both deployments are now running in parallel in their respective namespaces!
 
-> Useful command for exploring the result:
-
-`k get namespaces`{{exec}}
+> Useful command for exploring the result: `k get namespaces`{{exec}}
 
 # Check out the application
 
