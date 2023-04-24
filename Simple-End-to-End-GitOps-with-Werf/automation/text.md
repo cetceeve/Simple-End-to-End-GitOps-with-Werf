@@ -1,7 +1,7 @@
 In an actual deployment you would run werf from a ci tool like github actions.
 We cannot really simulate this here locally but here is an example in the form of a shell script.
 
-# Multiple branches
+# Example script
 
 If we are commiting on the `master` branch, we deploy into the `production` environment.
 If we commit to any other branch, that state will be deployed into the `development` environment.
@@ -20,8 +20,8 @@ fi
 # Call werf converge 
 werf converge --dir="/root/demo-app" --repo localhost:5000/demo-app --env "$ENVIRONMENT"
 
-' > /root/demo-app/.git/hooks/post-commit
-chmod +x /root/demo-app/.git/hooks/post-commit
+' > /root/demo-app/run-deploy.sh
+chmod +x /root/demo-app/run-deploy.sh
 ```{{exec}}
 
 

@@ -37,6 +37,12 @@ Now both deloyments can easily be accessed from the browser.
 This feature is especially useful in combination with multiple branches.
 You could have one production deployment running reflecting the main branch and one deployment running reflecting a development branch.
 
+`werf converge --repo localhost:5000/demo-app --env production`{{copy}}
+
+Useful command for exploring the result:
+
+`k get namespaces`{{exec}}
+
 # Check out the application
 
 Now access our demo app via:
