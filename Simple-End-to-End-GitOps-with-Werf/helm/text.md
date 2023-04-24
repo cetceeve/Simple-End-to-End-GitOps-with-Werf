@@ -4,8 +4,7 @@ We need to specify two kubernetes objects.
 First let's create a deployment for the demo-app.
 
 ```
-tee /root/demo-app/.helm/templates/deployment.yml << EOF
-apiVersion: apps/v1
+echo 'apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-app-deployment
@@ -26,7 +25,7 @@ spec:
         image: {{ .Values.werf.image.demoapp }}
         ports:
         - containerPort: 3000
-EOF
+' > /root/demo-app/.helm/templates/deployment.yml
 ```{{exec}}
 
 Note that the image we are using is specified as a value supplied by werf during the deployment.
@@ -34,8 +33,7 @@ Thats how werf automatically updates the image for us.
 
 We also need a Service to make our application accessible from the outside.
 ```
-tee /root/demo-app/.helm/templates/service.yml << EOF
-kind: Service
+echo 'kind: Service
 metadata:
   name: demo-app
 spec:
@@ -47,19 +45,18 @@ spec:
       port: 3000
       targetPort: 3000
       nodePort: 30081
-EOF
+' > /root/demo-app/.helm/templates/service.yml
 ```{{exec}}
 
 Finally we need a [werf.yml](https://werf.io/documentation/v1.2/reference/werf_yaml.html) file that contains metadata about our application. Most importantly we need to define our project name and where werf can find the Dockerfiles' to build from.
 
-```
-tee /root/demo-app/werf.yml << EOF
-configVersion: 1
+```bash
+echo 'configVersion: 1
 project: demo-app
 ---
 image: demoapp
 dockerfile: ./Dockerfile
-EOF
+' > /root/demo-app/werf.yml
 ```{{exec}}
 
 Now we are ready to go:

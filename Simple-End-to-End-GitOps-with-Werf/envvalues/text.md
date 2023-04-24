@@ -5,17 +5,17 @@ We can implement this easily with [Environment-dependent template parameters](ht
 We start by creating a `values.yml` file for our helm charts with two different ports for the `production` and `development` environment.
 
 ```bash
-tee -a /root/demo-app/.helm/values.yml << EOF
+echo '
 nodePort:
   development: 30081
   production: 30080
-EOF
+' > /root/demo-app/.helm/values.yml
 ```{{exec}}
 
 We can access those values via `$.Values` in our helm templates.
 The current environment is stored in `$.Values.werf.env`.
 
-With this let's change the `.helm/templates/services` definition.
+With this let's change the `.helm/templates/service.yml` definition.
 Change the last line
 
 `nodePort: 30081`
