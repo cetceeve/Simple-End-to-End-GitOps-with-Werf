@@ -6,7 +6,7 @@ Now werf is building our application, deploying it to the registry, updating the
 
 > *Notes on the image registry*: In order to avoid a login to dockerhub or any other cloud registry we are running a local registry here in our instance at `localhost:5000`. This registry is accessed via http instead of https, this is why we have specified in the previous step that werf is allowed to use an insecure registry.
 
-TODO: add flowchart here
+![Flowchart](./flowchart.jpg)
 
 # Explore
 
