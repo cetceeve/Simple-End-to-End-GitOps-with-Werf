@@ -29,8 +29,7 @@ spec:
 ' > /root/demo-app/.helm/templates/deployment.yml
 ```{{exec}}
 
-Note that the image we are using is specified as a value supplied by werf during the deployment.
-Thats how werf automatically updates the image for us.
+Note that the image we are setting for the container specification is a variable `{{ .Values.werf.image.demoapp }}` supplied by werf during deployment. That allows werf to automatically update the image for us.
 
 We also need a Service to make our application accessible from the outside.
 ```

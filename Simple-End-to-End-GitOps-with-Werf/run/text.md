@@ -1,16 +1,24 @@
-Let's go ahead and run werf for the first time. Make sure you are in the `demo-app/` folder. `pwd`{{exec}}:
+Let's go ahead and run werf for the first time. Make sure you are in the `demo-app/` folder. `pwd`{{exec}}.
+Start the command now, it will take some time:
 
 `werf converge --repo localhost:5000/demo-app`{{exec}}
 
-Now werf is building our application, deploying it to the registry, updating the manifests and then applying the new configuration to the Kubernetes cluster.
+`werf converge --repo <registry>/<image>` 
 
-> *Notes on the image registry*: In order to avoid a login to dockerhub or any other cloud registry we are running a local registry here in our instance at `localhost:5000`. This registry is accessed via http instead of https, this is why we have specified in the previous step that werf is allowed to use an insecure registry.
+The `--repo` command is actually about specifing the registry and the image we use for our deployment.
 
+Now werf starts by building our application from the Dockerfile(s) that we specified in `werf.yml`.
+Next it will upload the images into the registry as specified in the `--repo` option.
+Now that we have fresh images to deploy werf will update the manifest files to use the newest images.
+In this stage this variable - `image: {{ .Values.werf.image.demoapp }}` - from the `deployment.yml` is resolved.
+Now that the configuration files are ready werf will apply them to the local Kuberentes cluster.
 ![Flowchart](./flowchart.jpg)
+
+> *Notes on the image registry*: In order to avoid a login to dockerhub or any other cloud registry we are running a local image registry here in our instance at `localhost:5000`. This registry is accessed via http instead of https, this is why we have specified in the previous step that werf is allowed to use an insecure registry.
 
 # Explore
 
-Takesome some time to explore what was actually deployed:
+Take some time to explore what was actually deployed:
 
 `k --namespace demo-app get deployments`{{exec}}
 

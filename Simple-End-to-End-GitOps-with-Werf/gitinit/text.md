@@ -1,7 +1,9 @@
 # Demo Project
 
 Our demo project is a simple web-app called **demo-app** and resides in the folder `demo-app`.
-It comes with a Dockerfile and Helm charts already provided in the folder.
+The application was developed in Rust and serves static HTML pages.
+You can checkout the application Code in `src/main.rs`.
+It comes with a Dockerfile already provided in the folder.
 
 # Git repository
 

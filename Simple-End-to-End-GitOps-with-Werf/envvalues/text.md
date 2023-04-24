@@ -31,15 +31,30 @@ to
 
 `nodePort: {{ index $.Values.nodePort $.Values.werf.env }}`{{copy}}
 
-# Try it out
+# Multiple branches
 
-Now both deloyments can easily be accessed from the browser.
 This feature is especially useful in combination with multiple branches.
-You could have one production deployment running reflecting the main branch and one deployment running reflecting a development branch.
+You could have one production deployment running reflecting the `master` branch and one deployment running reflecting a `dev` branch.
 
-`werf converge --repo localhost:5000/demo-app --env production`{{copy}}
+Start by deploying your current application state to the production environment.
 
-Useful command for exploring the result:
+`werf converge --repo localhost:5000/demo-app --env production`{{exec}}
+
+Now create a new branch and checkout that branch.
+
+```
+git branch development
+git checkout development
+```{{exec}}
+
+Make some changes in this new branch and commit them.
+Deploy the state of this branch into the depoyment environment `development`.
+
+`werf converge --repo localhost:5000/demo-app --env development`{{exec}}
+
+Both deployments are now running in parallel in their respective namespaces.
+
+> Useful command for exploring the result:
 
 `k get namespaces`{{exec}}
 
