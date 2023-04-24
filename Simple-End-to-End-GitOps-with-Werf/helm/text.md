@@ -4,6 +4,7 @@ We need to specify two kubernetes objects.
 First let's create a deployment for the demo-app.
 
 ```
+mkdir -p /root/demo-app/.helm/templates
 echo 'apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,7 +34,8 @@ Thats how werf automatically updates the image for us.
 
 We also need a Service to make our application accessible from the outside.
 ```
-echo 'kind: Service
+echo 'apiVersion: v1
+kind: Service
 metadata:
   name: demo-app
 spec:
@@ -59,4 +61,11 @@ dockerfile: ./Dockerfile
 ' > /root/demo-app/werf.yml
 ```{{exec}}
 
-Now we are ready to go:
+Now we are ready to go.
+Before we can continue we need to commit what we have.
+
+```
+cd /root/demo-app
+git add .
+git commit -m "added helm charts"
+```{{exec}}
