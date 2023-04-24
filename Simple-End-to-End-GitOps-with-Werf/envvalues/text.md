@@ -24,7 +24,7 @@ to
 
 `nodePort: {{ index $.Values.nodePort $.Values.werf.env }}`
 
-Now you both deloyments can easily be accessed from the browser.
+Now both deloyments can easily be accessed from the browser.
 
 # Check out the application
 

@@ -1,5 +1,0 @@
-configVersion: 1
-project: demo-app
----
-image: demoapp
-dockerfile: ./Dockerfile

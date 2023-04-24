@@ -17,6 +17,10 @@
           "verify": "install/verify.sh"
         },
         {
+          "title": "Setup helm",
+          "text": "helm/text.md"
+        },
+        {
           "title": "Run werf",
           "text": "run/text.md"
         },
@@ -27,6 +31,10 @@
         {
           "title": "Remove deployment",
           "text": "dismiss/text.md"
+        },
+        {
+          "title": "Multiple Environments",
+          "text": "envvalues/text.md"
         },
         {
           "title": "Automation",
