@@ -3,7 +3,7 @@
 Thank you for completing the tutorial.
 
 # Sources
-Check out our resources here:
+Check out some more resources here:
 
 [WeaveWorks introduction to GitOps](https://www.weave.works/technologies/gitops/)
 

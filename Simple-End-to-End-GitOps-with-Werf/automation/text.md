@@ -1,6 +1,7 @@
-We could not really cover the usage of werf as part of a ci/cd pipeline much.
-In an actual deployment you would run werf from a ci tool like github actions.
-It integrates with [differnet ci tools](https://werf.io/documentation/v1.2/usage/integration_with_ci_cd_systems.html). Instead of deploying into the local cluster you would deploy to a cluster running in the cloud.
+We could not really cover the usage of werf as part of a CI/CD pipeline much.
+In an actual deployment you would run werf from a CI tool.
+Werf integrates with [differnet CI tools](https://werf.io/documentation/v1.2/usage/integration_with_ci_cd_systems.html) like *github actions*.
+Instead of deploying into the local cluster you would deploy to a cluster running in the cloud.
 
 # Commit hook
 
@@ -22,8 +23,7 @@ if [[ "$BRANCH" == "master" ]]; then
 fi
 
 # Call werf converge 
-werf converge --dir="/root/demo-app" --repo localhost:5000/demo-app --env "$ENVIRONMENT"
-
+werf converge --repo localhost:5000/demo-app --env "$ENVIRONMENT"
 ' > /root/demo-app/.git/hooks/post-commit
 chmod +x /root/demo-app/.git/hooks/post-commit
 ```{{exec}}
